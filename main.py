@@ -5,6 +5,12 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 
+if 'key' not in st.session_state:
+    st.session_state['key'] = 'value'
+
+if 'key' not in st.session_state:
+    st.session_state.key = 'value'
+
 @st.cache(allow_output_mutation=True)
 def cached_model():
     model = SentenceTransformer('jhgan/ko-sroberta-multitask')
